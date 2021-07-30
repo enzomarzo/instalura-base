@@ -7,10 +7,10 @@ import { MenuWrapper } from '../Menu/styles/menuWrapper'
 export default function Menu() {
   return (
     <MenuWrapper>
-      <MenuWrapper.LeftSide> {/* MenuWrapper.LeftSide */}
+      <MenuWrapper.LeftSide>
         <Logo />
       </MenuWrapper.LeftSide>
-      <MenuWrapper.CentralSide as="ul"> {/* MenuWrapper.CentralSide */}
+      <MenuWrapper.CentralSide as="ul">
         {[
           { url: '/', name: 'Home' },
           { url: '/faq', name: 'Perguntas Frequentes' },
@@ -23,7 +23,7 @@ export default function Menu() {
           </li>
         ))}
       </MenuWrapper.CentralSide>
-      <MenuWrapper.RightSide> {/* MenuWrapper.RightSide */}
+      <MenuWrapper.RightSide>
         <Button type="button" ghost variant="secondary.main">
           Entrar
         </Button>
