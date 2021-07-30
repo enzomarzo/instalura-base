@@ -1,7 +1,7 @@
 
 ## Aula 02
 
-<b>Vale a pena utilizar React para qualquer aplicação?</b>
+<b>Vale a pena utilizar React para qualquer aplicação?</b></br>
 Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações (como por exemplo a facilidade de subir um servidorlocal, de configurar o package.json, o git, o deploy na vercel) facilita a criação e manutenção de qualquer aplicação.
 
 ## Aula 03
@@ -28,7 +28,3 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 
 ## Aula 07 
  - <b>Responsividade:</b> breakpoints ficaram muito famosos com o bootstrap. Geralmente definido em 6 breakpoints, que vai desde extra-small (xs = menor que 576px) até extra-extra-large (xxl = maior que 1400px). Nesse site especifico vamos apenas dividir em desktop e mobile.
-
-
-## Extras
-
