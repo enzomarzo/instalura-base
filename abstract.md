@@ -1,7 +1,7 @@
 
 ## Aula 02
 
-<b>Vale a pena utilizar React para qualquer aplicação?</b>
+<b>Vale a pena utilizar React para qualquer aplicação?</b><>
 Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações (como por exemplo a facilidade de subir um servidorlocal, de configurar o package.json, o git, o deploy na vercel) facilita a criação e manutenção de qualquer aplicação.
 
 ## Aula 03
@@ -28,7 +28,26 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 
 ## Aula 07 
  - <b>Responsividade:</b> breakpoints ficaram muito famosos com o bootstrap. Geralmente definido em 6 breakpoints, que vai desde extra-small (xs = menor que 576px) até extra-extra-large (xxl = maior que 1400px). Nesse site especifico vamos apenas dividir em desktop e mobile.
-
+ - <p>Object,keys</p> => transforma as keys do objeto em um array. 
 
 ## Extras
 
+<b>Notação de colchetes</b>
+
+ - Tenho o seguinte objeto `const breakpoints = { xs: 0 , sm: 480, md: 768, lg: 992 }`
+ - Em outro lugar do código eu tenho outro objeto `mediaQueries = { xs: 'color: blue', md: 'color: white' }`
+ - A key do objeto breakpoints e do objeto mediaQueries tem equivalencias, ou seja, os dois tem as keys 'sm' e 'md'
+ - Eu preciso criar um objeto novo com a quantidade de objetos que tem o mediaQueries (ou seja, só dois, o xs e o md) mas eu quero passar os valores que estão no objeto breakpoints (que é o '480' e o '768').
+ - Para isso primeiro eu preciso pegar apenas as keys do mediaQueries. Para fazer isso eu faço: `object.keys(mediaQueries)`. O resultado vai ser `[xs, md]`
+ - Depois eu crio um função obtendo essas keys conforme o tópico acima e criando um novo objeto com o map. E agora utilizaremos a notação de colchetes para isso!
+```javascript
+  function breakpointMedia(cssByBreakpoints) { 
+      const breakpointsNames = Object.keys(cssByBreakpoints);
+      return breakpointsNames.map((breakpointsName) => 
+        return `@media (min-width: ${breakpoints[breakpointsName]}px) {
+          $(cssByBreakpoints[breakpointsName])
+          }`
+      )
+  }
+```
+ - Então estamos percorrendo um array. No primeiro item do array, ao passar `${breakpoints[breakpointsName]}` estamos buscando o objeto breakpoints e passando como propriedade desse objeto breakpoint uma propriedade de outro objeto (que ao invocar essa função, invocaremos com breakpointMedia(mediaQueries)). Isso seria impossivel utilizando o breakpointMedia.mediaQueries . Pois a notação de pontos não consegue substituir uma propriedade por uma variável.
