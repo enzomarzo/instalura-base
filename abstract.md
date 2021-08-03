@@ -1,6 +1,5 @@
 
 ## Aula 02
-
 <b>Vale a pena utilizar React para qualquer aplicação?</b><>
 Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações (como por exemplo a facilidade de subir um servidorlocal, de configurar o package.json, o git, o deploy na vercel) facilita a criação e manutenção de qualquer aplicação.
 
@@ -10,7 +9,7 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 
 ## Aula 04
  - <b>lib lodash:</b> facilitando o trabalho com o JS
- - <b>Styled Components:</b> Utilizando objetos e funções dentro do CSS! 
+ - <b>Styled Components:</b> Utilizando objetos e funções dentro do CSS! Para obter uma props do styled component passamos uma função e podemos pegar todas as props. Por exemplo, dentro da `styled.h1 `\${(props) => console.log(props)}`\` 
  - <b>Theme:</b> o designer colocou no figma diversas cores e formatos de texto que utilizaremos em todo o projeto.
    - Para as cores, criamos uma pasta theme com o index.js contendo as cores primarias, secundárias e terciárias. Inclusive já cadastrando a cor de contraste do texto (branca) para as cores mais escuras
    - Criamos o TypographyVariant para os titulos, subtitulos e paragrafos
@@ -29,6 +28,9 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 ## Aula 07 
  - <b>Responsividade:</b> breakpoints ficaram muito famosos com o bootstrap. Geralmente definido em 6 breakpoints, que vai desde extra-small (xs = menor que 576px) até extra-extra-large (xxl = maior que 1400px). Nesse site especifico vamos apenas dividir em desktop e mobile.
  - <p>Object,keys</p> => transforma as keys do objeto em um array. 
+
+## Aula 08
+ - <b>Grid:</b> criação do conceito de Grids. Bem similar ao que o bootstrap utiliza.
 
 ## Extras
 

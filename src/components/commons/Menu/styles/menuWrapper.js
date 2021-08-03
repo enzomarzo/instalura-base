@@ -92,7 +92,6 @@ MenuWrapper.CentralSide = styled.div`
     &:focus {
       font-weight: 500;
       color: #070C0E;
-      
     }
   }
 `;
