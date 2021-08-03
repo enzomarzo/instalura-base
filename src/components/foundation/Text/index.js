@@ -55,7 +55,7 @@ const TextBase = styled.span`
 `;
 
 //nossa função principal => ela recebe vários parametros e mais as props)
-export function Text({
+export default function Text({
   variant,
   children,
   tag,

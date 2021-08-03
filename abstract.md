@@ -32,6 +32,12 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 ## Aula 08
  - <b>Grid:</b> criação do conceito de Grids. Bem similar ao que o bootstrap utiliza.
 
+## Aula 09
+ - <b>Box Component:</b> criando um componente para centralizar o texto da home
+ - <b>es-lint:</b> um corretor para deixar nosso código mais padronizado e limpo.
+  - <code>yarn add eslint --save-dev</code>
+  - <code>yarn eslint --init</code>
+
 ## Extras
 
 <b>Notação de colchetes</b>
