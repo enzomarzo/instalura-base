@@ -18,3 +18,5 @@ The easiest way to deploy a project:
  1. login vercel.com with github account
  2. import the project I want to deploy just by clicking on 'import'
  3. click on 'deploy' button :)
+
+<img src="./public/images/instalura.png" >
