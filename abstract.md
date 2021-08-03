@@ -59,3 +59,5 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
   }
 ```
  - Então estamos percorrendo um array. No primeiro item do array, ao passar `${breakpoints[breakpointsName]}` estamos buscando o objeto breakpoints e passando como propriedade desse objeto breakpoint uma propriedade de outro objeto (que ao invocar essa função, invocaremos com breakpointMedia(mediaQueries)). Isso seria impossivel utilizando o breakpointMedia.mediaQueries . Pois a notação de pontos não consegue substituir uma propriedade por uma variável
+
+ ![](.\public\images\instalura.png)
