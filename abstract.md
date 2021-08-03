@@ -37,7 +37,7 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
  - <b>es-lint:</b> um corretor para deixar nosso código mais padronizado e limpo.
   - <code>yarn add eslint --save-dev</code>
   - <code>yarn eslint --init</code>
-
+  - baixar o eslint plugin no vscode
 ## Extras
 
 <b>Notação de colchetes</b>
