@@ -20,7 +20,7 @@ uma string então é só ler [propname]: props[propname], que seria, por exemplo
 // propToStyle(textAlign) => o parametro que estamos passando é o textAlign
 // E ai precisamos acessar o props.textAlign e fazemos isso por meio da notação de colchetes
 
-export function propToStyle(propName) {
+export default function propToStyle(propName) {
   return (props) => {
     const propValue = props[propName];
 
@@ -51,5 +51,3 @@ export function propToStyle(propName) {
     };
   };
 }
-
-export default propToStyle;
