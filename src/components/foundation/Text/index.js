@@ -2,11 +2,10 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
-import { propToStyle } from '../../../theme/utils/propToStyle';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../theme/utils/propToStyle';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
-
-//definindo a variável de texto no desktop
+// definindo a variável de texto no desktop
 const paragraph1 = css`
   ${({ theme }) => css`
     font-size: ${theme.typographyVariants.paragraph1.fontSize};
@@ -15,7 +14,7 @@ const paragraph1 = css`
   `}
 `;
 
-//definindo o texto mobile
+// definindo o texto mobile
 const smallestException = css`
   ${({ theme }) => css`
     font-size: ${theme.typographyVariants.smallestException.fontSize};
@@ -24,7 +23,7 @@ const smallestException = css`
   `}
 `;
 
-//exportando para utilizarmos em outros lugares
+// exportando para utilizarmos em outros lugares
 export const TextStyleVariants = {
   smallestException,
   paragraph1,
@@ -47,14 +46,14 @@ export const TextStyleVariants = {
 
 };
 
-//texto base que vai ser um span e receber uma cor que passarmos na props.
+// texto base que vai ser um span e receber uma cor que passarmos na props.
 const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
 `;
 
-//nossa função principal => ela recebe vários parametros e mais as props)
+// nossa função principal => ela recebe vários parametros e mais as props)
 export default function Text({
   variant,
   children,
@@ -73,13 +72,14 @@ export default function Text({
   );
 }
 
-//por default, se não passarmos nada na hora de chamar nosso componente, recebermos um span estilizado com paragraph1 
+// por default, se não passarmos nada na hora de chamar nosso componente,
+// recebermos um span estilizado com paragraph1
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
 };
 
-//apenas tipando os textos para sabermos o que precisa passar na hora de criar esse texto.
+// apenas tipando os textos para sabermos o que precisa passar na hora de criar esse texto.
 Text.propTypes = {
   children: PropTypes.node.isRequired,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
