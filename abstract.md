@@ -1,4 +1,6 @@
 
+# Modulo 1
+
 ## Aula 02
 <b>Vale a pena utilizar React para qualquer aplicação?</b><>
 Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações (como por exemplo a facilidade de subir um servidorlocal, de configurar o package.json, o git, o deploy na vercel) facilita a criação e manutenção de qualquer aplicação.
@@ -60,4 +62,29 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
 ```
  - Então estamos percorrendo um array. No primeiro item do array, ao passar `${breakpoints[breakpointsName]}` estamos buscando o objeto breakpoints e passando como propriedade desse objeto breakpoint uma propriedade de outro objeto (que ao invocar essa função, invocaremos com breakpointMedia(mediaQueries)). Isso seria impossivel utilizando o breakpointMedia.mediaQueries . Pois a notação de pontos não consegue substituir uma propriedade por uma variável
 
- ![](.\public\images\instalura.png)
+
+# Modulo 2
+
+## State e Modal
+
+assim como no Angular utilizamos o *ngIf, no react podemos passar direto a condição pelos { } . Por exemplo `{ variavel && <modal/> }` . O modal só será exibido se a variável for true
+
+O <b>estado</b> é algo comum no desenvolvimento e muito especial no React. O que precisamos alterar na tela (ou seja, quando é necessário renderizar novamente ou 're-renderizar) faz sentido usar o state.
+
+O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num modal. Ele tem o state false até alguém clicar em algum lugar que irá ativar esse modal. Ao clicar, ele muda de estado para true e exibe o modal na tela. Como o react utiliza do conceito de imutabilidade, sempre criaremos uma variável de estado e uma outra que irá setar esse estado.
+
+## Aula 01 
+ - Criação do Modal na mão, sem uso de lib (é normal utilizarmos lib quando criamos um modal)
+  Na hora de fazermos os modais, além do pop up, criamos também uma camada que ficará em cima de todo o layout. É uma camada simples, sem nada, com um opacity que deixará a tela um pouco mais escura na hora que o pop up abrir.
+ - `const [isModalOpen, setModalState] = React.useState(false);` 
+  - Essa forma acima é a forma como iremos criar nossa variável sempre que precisarmos alterá-la e renderizar a tela novamente.
+  - isModalOpen é a nossa variável
+  - setModalState é a função que irá modificar nossa váriavel (o set segue o principio da imutabilidade)
+  - o (false) é o valor inicial da nossa variável isModalOpen
+ - Pensando antes de fazer 
+  - Queremos criar uma pop-up que irá abrir quando eu clicar em um determinado botão 
+  - Teremos que fazer 3 coisas principais
+    - Criar um <b>componente 'modal'</b> (com todas propriedades css, html e js)
+    - Utilizra o <b>onClick</b> event para chamar o modal
+    - Utilizar do <b>state</b> com valores <b>booleanos</b>. 
+  - HTML: `data- `. Nem id, nem class. Data é um atributo do html que serve como um dado qualquer que queremos passar pro JS. No nosso exemplo, nós utilizamos o `data-modal-safe-area = true`. E no onClick() pegamos o event `onClick(event)` e buscamos algo que considere essa tag que recebeu essa 'data' e todos seus filhos, com o `event.target.closest('[data-modal-safe-area]')` 
