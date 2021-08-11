@@ -88,3 +88,8 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
     - Utilizra o <b>onClick</b> event para chamar o modal
     - Utilizar do <b>state</b> com valores <b>booleanos</b>. 
   - HTML: `data- `. Nem id, nem class. Data é um atributo do html que serve como um dado qualquer que queremos passar pro JS. No nosso exemplo, nós utilizamos o `data-modal-safe-area = true`. E no onClick() pegamos o event `onClick(event)` e buscamos algo que considere essa tag que recebeu essa 'data' e todos seus filhos, com o `event.target.closest('[data-modal-safe-area]')` 
+
+
+## Aula 02 - Lib framer-motion
+ - utilizando a lib framer-motion
+ - criando uma branch `git checkout -b <nomeDaBranch>` e fazendo pull request dentro do git.
