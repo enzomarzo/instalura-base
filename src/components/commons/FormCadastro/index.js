@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import TextField from '../../forms/TextField';
 import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 
-function FormContent() {
+function FormContent({ onClose }) {
   const [userInfo, setUserInfo] = React.useState({
     usuario: '',
     email: '',
@@ -76,6 +77,7 @@ function FormContent() {
         ghost
         position="absolute"
         top="0"
+        onClick={() => onClose()}
       >
         X
       </Button>
@@ -85,7 +87,7 @@ function FormContent() {
 }
 
 // eslint-disable-next-line react/prop-types
-export default function FormCadastro({ propsDoModal }) {
+export default function FormCadastro({ onClose, propsDoModal }) {
   return (
     <Grid.Row
       marginLeft={0}
@@ -113,9 +115,13 @@ export default function FormCadastro({ propsDoModal }) {
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsDoModal}
         >
-          <FormContent />
+          <FormContent onClose={onClose} />
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
+
+FormContent.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};

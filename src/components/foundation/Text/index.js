@@ -85,7 +85,7 @@ Text.defaultProps = {
 
 // apenas tipando os textos para sabermos o que precisa passar na hora de criar esse texto.
 Text.propTypes = {
+  tag: PropTypes.string,
+  variant: PropTypes.string,
   children: PropTypes.node,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
 };
