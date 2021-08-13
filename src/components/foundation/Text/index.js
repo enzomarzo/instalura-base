@@ -23,11 +23,7 @@ const smallestException = css`
   `}
 `;
 
-// exportando para utilizarmos em outros lugares
-export const TextStyleVariants = {
-  smallestException,
-  paragraph1,
-  title: css`
+const title = css`
   ${({ theme }) => css`
     font-size: ${theme.typographyVariants.titleXS.fontSize};
     font-weight: ${theme.typographyVariants.titleXS.fontWeight};
@@ -40,10 +36,15 @@ export const TextStyleVariants = {
         font-weight: ${theme.typographyVariants.title.fontWeight};
         line-height: ${theme.typographyVariants.title.lineHeight};
       `}
-    `,
+  `,
   })}
-`,
+`;
 
+// exportando para utilizarmos em outros lugares
+export const TextStyleVariants = {
+  smallestException,
+  paragraph1,
+  title,
 };
 
 // texto base que vai ser um span e receber uma cor que passarmos na props.
@@ -51,6 +52,8 @@ const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
+  ${propToStyle('marginBottom')}
+  ${propToStyle('margin')}
 `;
 
 // nossa função principal => ela recebe vários parametros e mais as props)
@@ -77,11 +80,12 @@ export default function Text({
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
+  children: null,
 };
 
 // apenas tipando os textos para sabermos o que precisa passar na hora de criar esse texto.
 Text.propTypes = {
-  children: PropTypes.node.isRequired,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
+  tag: PropTypes.string,
+  variant: PropTypes.string,
+  children: PropTypes.node,
 };

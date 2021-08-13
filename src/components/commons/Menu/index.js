@@ -4,7 +4,7 @@ import Text from '../../foundation/Text';
 import Button from '../Button';
 import { MenuWrapper } from './styles/menuWrapper';
 
-export default function Menu() {
+export default function Menu({openModal}) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -27,7 +27,11 @@ export default function Menu() {
         <Button type="button" ghost variant="secondary.main">
           Entrar
         </Button>
-        <Button type="button" variant="primary.main">
+        <Button
+          type="button"
+          variant="primary.main"
+          onClick={() => openModal()}
+        >
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>

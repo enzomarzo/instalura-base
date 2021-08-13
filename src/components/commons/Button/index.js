@@ -20,8 +20,21 @@ const Button = styled.button`
   padding: 12px 26px;
   font-weight: bold;
   opacity: 1;
+
+  ${TextStyleVariants.smallestException}
+
+  ${(props) => {
+    if (props.ghost) {
+      return ButtonGhost;
+    }
+    return ButtonDefault;
+  }}
   transition: opacity ${({ theme }) => theme.transition};
-  border-radius: ${({ theme }) => theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius};
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
 
   ${breakpointsMedia({
     xs: css`
@@ -33,10 +46,21 @@ const Button = styled.button`
     `,
   })}
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+  ${({ fullWidth }) => fullWidth && css`
+    width: 100%;
+  `};
+
+
   ${propToStyle('margin')}
   ${propToStyle('display')}
+  ${propToStyle('position')}
+  ${propToStyle('top')}
 
-  ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
+
   &:hover,
   &:focus {
     opacity: .5;
