@@ -59,7 +59,7 @@ const Button = styled.button`
   ${propToStyle('display')}
   ${propToStyle('position')}
   ${propToStyle('top')}
-
+  ${propToStyle('right')}
 
   &:hover,
   &:focus {

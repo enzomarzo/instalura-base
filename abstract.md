@@ -101,7 +101,11 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
     - no OnChange passamos uma função que lida com as mudanças de estado. Isso permite o usuário mudar o campo do input e digitar o que ele quiser. Pra fazer isso temos que criar um estado para os campos de input (no caso seria um objeto com apenas usuário e email) + pegar o atributo de nome do input e passar para essa variável o event.target.value (que é o que usuário está digitando)
   - O segundo é o Form. No `<form >` como de padrão passamos o onSubmit com o envet.preventDefault()..`<form onSubmit={(event) => event.preventDefault()}`
 
-
+## Aula 04
+ - utilização de outra lib de animação (react-lottie (um fork do @crello)) para utilizar no formulário
+ - Fetch API + Promisse (assíncrona) e POST. Exemplo de sincronismo (Telefone = sincrono || Whatsapp = assíncrono). 
+ - Criando + 2 useState para utilizar na FetchAPI => IsFormSubmitd (true e false) e submissionStatus (um objeto para saber se está parado, carregando, feito ou com erro)
+ - 
 
 ## Extras
 
