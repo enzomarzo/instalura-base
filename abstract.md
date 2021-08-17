@@ -105,7 +105,10 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
  - utilização de outra lib de animação (react-lottie (um fork do @crello)) para utilizar no formulário
  - Fetch API + Promisse (assíncrona) e POST. Exemplo de sincronismo (Telefone = sincrono || Whatsapp = assíncrono). 
  - Criando + 2 useState para utilizar na FetchAPI => IsFormSubmitd (true e false) e submissionStatus (um objeto para saber se está parado, carregando, feito ou com erro)
- - 
+
+## Aula 05
+ - Lint => Incluindo o comando no package.json para facilitar o comando `"lint": "eslint --ignore-path .gitignore ."`. Agora é só digitar yarn lint e vai rodar o lint no projeto todo (desconsiderando o gitignore)
+ - CI/CD (Continuous Integration & Continuous Deploy)
 
 ## Extras
 
