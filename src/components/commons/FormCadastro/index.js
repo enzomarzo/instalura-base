@@ -51,7 +51,7 @@ function FormContent({ onClose }) {
           placeholder="Email"
           name="email"
           value={userInfo.email}
-          onChange={handleChange} // capturadores, pegadores de ação
+          onChange={handleChange}
         />
       </div>
 

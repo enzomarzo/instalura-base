@@ -93,3 +93,15 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
 ## Aula 02 - Lib framer-motion
  - utilizando a lib framer-motion
  - criando uma branch `git checkout -b <nomeDaBranch>` e fazendo pull request dentro do git.
+
+## Aula 03 - Criando um form
+ - Separando o form em dois componentes. 
+  - O primeiro é o TextField que são as configurações do nosso input
+    - Nele teremos o type (text), placeholder, nome, valor e o ´onChange´
+    - no OnChange passamos uma função que lida com as mudanças de estado. Isso permite o usuário mudar o campo do input e digitar o que ele quiser. Pra fazer isso temos que criar um estado para os campos de input (no caso seria um objeto com apenas usuário e email) + pegar o atributo de nome do input e passar para essa variável o event.target.value (que é o que usuário está digitando)
+  - O segundo é o Form. No `<form >` como de padrão passamos o onSubmit com o envet.preventDefault()..`<form onSubmit={(event) => event.preventDefault()}`
+
+
+
+## Extras
+
