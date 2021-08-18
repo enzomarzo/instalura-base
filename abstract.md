@@ -112,7 +112,15 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
 
 
 ## Aula 06
- - Arquivo main.yml com as configurações do <b>Github Action</b> para fazer nosso <b>CI</b>.
+  - Arquivo main.yml com as configurações do <b>Github Action</b> para fazer nosso <b>CI</b>.
+    - caminho => Dentro do Git => aba Actions, workflow e logo no primeiro item, 'criando um workflow próprio' ao invés de usar um pronto para 'deno' ou 'node' por ex.
+  - depois eu faço uma sugestão de alteração com um commit de pull request. E ai ele vai dar uma geral no código
+  - Dentro das configurações e clicando em branchs eu posso cadastrar uma regra do tipo "Require status checks to pass before merging". E incluir o eslint e o vercel. Assim temos uma especie de teste sendo feita antes de fazer o merge. 
+  - Portanto estamos fazendo o <b>CI (continuous integration)</b> com o Github Actions e o <b>cd (continuous deploy)</b> com a Vercel
+
+## Aula 07
+  - <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">Conventional commits:</a> uma filosofia de como devem ser feitos os commits. 
+  - Existem algumas libs que ajudam a fazer essas convenções.
 
 ## Extras
 

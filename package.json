@@ -4,11 +4,17 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "custom-script": "node ./script-test.js",
+    "commit": "cz"
   },
   "dependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@crello/react-lottie": "^0.0.11",
+    "cz-conventional-changelog": "^3.3.0",
     "framer-motion": "^4.1.17",
+    "husky": "^7.0.1",
     "lodash": "^4.17.21",
     "next": "latest",
     "prop-types": "^15.7.2",
@@ -26,5 +32,16 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "license": "MIT"
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
