@@ -108,7 +108,11 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
 
 ## Aula 05
  - Lint => Incluindo o comando no package.json para facilitar o comando `"lint": "eslint --ignore-path .gitignore ."`. Agora é só digitar yarn lint e vai rodar o lint no projeto todo (desconsiderando o gitignore)
- - CI/CD (Continuous Integration & Continuous Deploy)
+ - CI/CD (Continuous Integration & Continuous Deploy). O CI é
+
+
+## Aula 06
+ - Arquivo main.yml com as configurações do <b>Github Action</b> para fazer nosso <b>CI</b>.
 
 ## Extras
 
