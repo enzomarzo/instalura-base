@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import propToStyle from '../../../theme/utils/propToStyle';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
-import { Link } from '../../commons/Link';
+import Link from '../../commons/Link';
 
 // definindo a variável de texto no desktop
 const paragraph1 = css`
@@ -80,7 +80,7 @@ export default function Text({
   }
   return (
     <TextBase
-      as={tag}
+      as={Link}
       variant={variant}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
