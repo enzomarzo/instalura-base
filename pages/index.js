@@ -33,7 +33,9 @@ export default function Home() {
           />
         )}
       </Modal>
-      <Menu openModal={() => setModalState(!isModalOpen)} />
+      <Menu
+        openModal={() => setModalState(!isModalOpen)}
+      />
 
       <Grid.Container
         marginTop={{

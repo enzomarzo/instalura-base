@@ -123,4 +123,13 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
   - Existem algumas libs que ajudam a fazer essas convenções.
 
 ## Extras
+  - <b>SVG</b> => É um vetor que podemos criar em programas como o ilustrator ou no próprio Figma. Ele é uma linguagem XML padronizada e recomendada pela W3C. Ele é mais flexível e escalável que imagens com formatos png ou jpg, pois uma imagem em SVG nós conseguimos alterar coisas como o width, o heigth, o preenchimento interno e o contorno da imagem.
+  - <b>lazy loading e animação</b> As versões mais modernas dos navegadores (creio que do final de 2019 para cá) já aceitando o atributo `loading="lazy"` da tag `img` do HTML.
+    - Uma forma de fazer isso na mão é utilizando duas funcões do JS. Uma é a `getBoundingClientRect()` que é um método do `Element`. Esse método serve para entender o tamanho de um elemento e a sua posição dentro do campo de visualização do usuário no browser (que é o viewport). Se fizermos a comparação do getBoundingClientRect() com o atributo window.innerHeight -  que serva para identificar o tamanho da nossa tela de visualização, ou seja, `imagemSelecionada.getBoudingClientRect() < window.innerHeight`, sabemos se essa imagem está sendo visualizada pelo cliente ou não.
 
+  
+# Modulo 3
+
+## Aula 01
+ - Criando a página de faq (só criar uma pasta em pages)
+ - Link no Next => component NextLink da biblioteca link do Next 
