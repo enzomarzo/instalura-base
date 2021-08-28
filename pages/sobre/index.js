@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function FAQScreen() {
+export default function Sobre() {
   return (
     <div>
-      Página do FAQ
+      Página do Sobre
     </div>
   );
 }

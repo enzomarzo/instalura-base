@@ -17,19 +17,18 @@ const StyledLink = styled.a`
     opacity: .5;
   }
 `;
-
-const Link = ({ children, href, ...props }) => (
-  <NextLink href={href} passHref>
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <StyledLink {...props}>
-      {children}
-    </StyledLink>
-  </NextLink>
-);
+export default function Link({ children, href, ...props }) {
+  return (
+    // passHref => passar o href para o filho (que geralmente é um <a>)
+    <NextLink href={href} passHref>
+      <StyledLink {...props}>
+        {children}
+      </StyledLink>
+    </NextLink>
+  );
+}
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
-
-export default Link;

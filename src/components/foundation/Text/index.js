@@ -59,16 +59,16 @@ const TextBase = styled.span`
 
 // nossa função principal => ela recebe vários parametros e mais as props)
 export default function Text({
+  tag,
   variant,
   children,
-  tag,
   href,
   ...props
 }) {
   if (href) {
     return (
       <TextBase
-        as={tag}
+        as={Link}
         variant={variant}
         href={href}
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -80,7 +80,7 @@ export default function Text({
   }
   return (
     <TextBase
-      as={Link}
+      as={tag}
       variant={variant}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
@@ -95,7 +95,7 @@ export default function Text({
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
-  children: null,
+  children: null, // null por conta do <input> não ter filho
   href: '',
 };
 
