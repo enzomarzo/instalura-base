@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import propToStyle from '../../../theme/utils/propToStyle';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import Link from '../../commons/Link';
 
 // definindo a variável de texto no desktop
 const paragraph1 = css`
@@ -58,11 +59,25 @@ const TextBase = styled.span`
 
 // nossa função principal => ela recebe vários parametros e mais as props)
 export default function Text({
+  tag,
   variant,
   children,
-  tag,
+  href,
   ...props
 }) {
+  if (href) {
+    return (
+      <TextBase
+        as={Link}
+        variant={variant}
+        href={href}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      >
+        {children}
+      </TextBase>
+    );
+  }
   return (
     <TextBase
       as={tag}
@@ -80,7 +95,8 @@ export default function Text({
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
-  children: null,
+  children: null, // null por conta do <input> não ter filho
+  href: '',
 };
 
 // apenas tipando os textos para sabermos o que precisa passar na hora de criar esse texto.
@@ -88,4 +104,5 @@ Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
+  href: PropTypes.string,
 };
