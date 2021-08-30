@@ -131,5 +131,12 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
 # Modulo 3
 
 ## Aula 01
- - Criando a página de faq (só criar uma pasta em pages)
- - Link no Next => component NextLink da biblioteca link do Next 
+ - Criando as páginas de FAQ e Sobre
+ - Rotas => utilizando o `Link` no Next => component `NextLink` da biblioteca link do Next
+
+## Aula 02
+ - API com NextJS: via .fetch e via GetStaticProps
+    - Podemos fazer via <b>Fecth</b>, no jeito padrão => Criamos uma variável via useState do React e depois utilizamos o UseEffect e passamos o retorno que estamos recebendo da API para essa variável do useState. 
+    - O <b>useEffect</b> abstrai a ideia do ciclo de vida do component. Antes do useEffect o React utilizava coisas especificas de cada ciclo de vida (que ainda é possível utilizar também, quando trabalhamos com classes), como 'didMount' 'didUpdate' e 'willUnmount', assim como no Angular utilizamos o OnInit, OnChange, AfterInit, onDestroy e etc.
+    - É por isso que quando consumimos uma API, via fetch, geralmente utilizamos o useState e o useEffect. o UseState serve para armazenar e alterar o estado de alguma variável. E o useEffect serve para que possamos fazer algo (no caso com essa variável) depois do DOM ter renderizado.
+    - Fecth + UseState + UseEffect é uma forma padrão de buscar API pelo React. Mas com o Next podemos utilizar o <b>GetStaticProps</b>. A diferença é que no fetch normal nós renderizamos a páginas e depois buscamos a informação e no GetStaticProps antes de renderizar a página o next se encarrega de já mostrar essa info de servidor. Isso é feito no build e não no load da página.
