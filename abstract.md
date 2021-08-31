@@ -140,3 +140,35 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
     - O <b>useEffect</b> abstrai a ideia do ciclo de vida do component. Antes do useEffect o React utilizava coisas especificas de cada ciclo de vida (que ainda é possível utilizar também, quando trabalhamos com classes), como 'didMount' 'didUpdate' e 'willUnmount', assim como no Angular utilizamos o OnInit, OnChange, AfterInit, onDestroy e etc.
     - É por isso que quando consumimos uma API, via fetch, geralmente utilizamos o useState e o useEffect. o UseState serve para armazenar e alterar o estado de alguma variável. E o useEffect serve para que possamos fazer algo (no caso com essa variável) depois do DOM ter renderizado.
     - Fecth + UseState + UseEffect é uma forma padrão de buscar API pelo React. Mas com o Next podemos utilizar o <b>GetStaticProps</b>. A diferença é que no fetch normal nós renderizamos a páginas e depois buscamos a informação e no GetStaticProps antes de renderizar a página o next se encarrega de já mostrar essa info de servidor. Isso é feito no build e não no load da página.
+
+```javascript
+// Modo REACT exemplo de fetch / consumo de API (com useState e useEffect)
+export default function FAQPage(props) {
+  const [faqCategories, setFaqCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://instalura-api.vercel.app/api/content/faq').then(async (res) => {
+      const response = await res.json();
+      return response.data;
+    })
+      .then((faqCategoriesFromServer) => {
+        setFaqCategories(faqCategoriesFromServer);
+      });
+  });
+}
+
+// Modo NEXT.JS - exemplo de fetch / consumo de API com getStaticProps
+export async function getStaticProps() {
+  const faqCategories = await fetch('https://instalura-api.vercel.app/api/content/faq').then(async (res) => {
+    const response = await res.json();
+    return response.data;
+  });
+```
+
+## Aula 03 - SEO
+  - semantica do HTML é importante para
+  - Colocando as metatags dinamicas no HEAD e criando o Robots.
+
+## Aula 04 - Context/Redux
+  - O redux é uma biblioteca que faz com que consigamos utilizar o gerenciamento de estado por toda a aplicação. É como se tivesse um escopo de variáveis que pudessemos acessar em qualquer componente.
+  - No projeto utilizamos o conceito de <b>High Order Function</b>. De forma meio grosseira, o Javascript chama de callback o High Order Function (HOF). Pelo que eu entendo callback é a função que está ali só aguardando ser chamada em outra função. E high order function é a função que chama o callback.

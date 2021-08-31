@@ -32,11 +32,11 @@ const title = css`
   `}
   ${breakpointsMedia({
     md: css`
-      ${({ theme }) => css`
-        font-size: ${theme.typographyVariants.title.fontSize};
-        font-weight: ${theme.typographyVariants.title.fontWeight};
-        line-height: ${theme.typographyVariants.title.lineHeight};
-      `}
+    ${({ theme }) => css`
+      font-size: ${theme.typographyVariants.title.fontSize};
+      font-weight: ${theme.typographyVariants.title.fontWeight};
+      line-height: ${theme.typographyVariants.title.lineHeight};
+    `}
   `,
   })}
 `;
@@ -71,7 +71,6 @@ export default function Text({
         as={Link}
         variant={variant}
         href={href}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
         {children}
@@ -82,7 +81,6 @@ export default function Text({
     <TextBase
       as={tag}
       variant={variant}
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {children}
