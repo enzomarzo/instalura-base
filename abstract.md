@@ -172,3 +172,11 @@ export async function getStaticProps() {
 ## Aula 04 - Context/Redux
   - O redux é uma biblioteca que faz com que consigamos utilizar o gerenciamento de estado por toda a aplicação. É como se tivesse um escopo de variáveis que pudessemos acessar em qualquer componente.
   - No projeto utilizamos o conceito de <b>High Order Function</b>. De forma meio grosseira, o Javascript chama de callback o High Order Function (HOF). Pelo que eu entendo callback é a função que está ali só aguardando ser chamada em outra função. E high order function é a função que chama o callback.
+
+# Extras
+
+- como trabalhar com open source com
+  - entra no codigo do git e faz um fork
+  - git clone locamente
+  
+- git commit --amend (mudar a descrição do ultimo commit)
