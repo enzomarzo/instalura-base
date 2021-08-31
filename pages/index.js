@@ -1,44 +1,20 @@
 import React from 'react';
-import Menu from '../src/components/commons/Menu';
-import Footer from '../src/components/commons/Footer';
 import Text from '../src/components/foundation/Text';
 import Button from '../src/components/commons/Button';
 import Grid from '../src/components/foundation/layout/Grid';
 import Box from '../src/components/foundation/layout/Box';
-import Modal from '../src/components/commons/Modal';
-import FormCadastro from '../src/components/commons/FormCadastro';
-import SEO from '../src/components/commons/SEO';
+import { WebsitePageContext } from '../src/components/wrappers/WebsitePage';
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 
-export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(false);
+function HomeScreen() {
+  const websitePageContext = React.useContext(WebsitePageContext);
 
   return (
     <Box
-      flex="1"
       display="flex"
-      flexWrap="wrap"
+      flex="1"
       flexDirection="column"
-      justifyContent="space-between"
-      backgroundImage="url(/images/bubbles.svg)"
-      backgroundRepeat="no-repeat"
-      backgroundPosition="bottom right"
     >
-      <SEO headTitle="Home" />
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setModalState(false)}
-      >
-        {(propsDoModal) => (
-          <FormCadastro
-            onClose={() => setModalState(false)}
-            propsDoModal={propsDoModal}
-          />
-        )}
-      </Modal>
-      <Menu
-        openModal={() => setModalState(!isModalOpen)}
-      />
-
       <Grid.Container
         marginTop={{
           xs: '32px',
@@ -86,9 +62,7 @@ export default function Home() {
                 xs: 'auto',
                 md: 'initial',
               }}
-              onClick={() => {
-                setModalState(!isModalOpen); // novo state sendo atribuido => true or false
-              }}
+              onClick={() => { websitePageContext.toggleModalCadastro(); }}
             >
               Cadastrar
             </Button>
@@ -102,7 +76,36 @@ export default function Home() {
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-      <Footer />
     </Box>
   );
 }
+
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home',
+    },
+    pageBoxProps: {
+      backgroundImage: 'url(/images/bubbles.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom right',
+    },
+  },
+});
+
+// export default function Home() {
+//   return (
+//     <WebsitePageWrapper
+//       seoProps={{
+//         headTitle: 'Home',
+//       }}
+//       pageBoxProps={{
+//         backgroundImage: 'url(/images/bubbles.svg)',
+//         backgroundRepeat: 'no-repeat',
+//         backgroundPosition: 'bottom right',
+//       }}
+//     >
+//       <HomeScreen />
+//     </WebsitePageWrapper>
+//   );
+// }
