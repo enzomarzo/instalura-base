@@ -2,54 +2,71 @@
 # Modulo 1
 
 ## Aula 02
-<b>Vale a pena utilizar React para qualquer aplicação?</b><>
+<b>Vale a pena utilizar React para qualquer aplicação?</b>
+
 Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações (como por exemplo a facilidade de subir um servidorlocal, de configurar o package.json, o git, o deploy na vercel) facilita a criação e manutenção de qualquer aplicação.
 
 ## Aula 03
- - <b>Componentes:</b> criando e separando os componentes
- - <b>Logo em SVG:</b> criando arquivo em SVG para nossas fotos
+<b>Componentes:</b> criando e separando os componentes
+
+<b>Logo em SVG:</b> criando arquivo em SVG para nossas fotos
 
 ## Aula 04
- - <b>lib lodash:</b> facilitando o trabalho com o JS
- - <b>Styled Components:</b> Utilizando objetos e funções dentro do CSS! Para obter uma props do styled component passamos uma função e podemos pegar todas as props. Por exemplo, dentro da `styled.h1 `\${(props) => console.log(props)}`\` 
- - <b>Theme:</b> o designer colocou no figma diversas cores e formatos de texto que utilizaremos em todo o projeto.
-   - Para as cores, criamos uma pasta theme com o index.js contendo as cores primarias, secundárias e terciárias. Inclusive já cadastrando a cor de contraste do texto (branca) para as cores mais escuras
-   - Criamos o TypographyVariant para os titulos, subtitulos e paragrafos
-   - No GlobalStyle colocamos coisas bem gerais, como html e body (utilizaremos mais para fazer o reset no CSS na próxima aula)
+<b>lib lodash:</b> facilitando o trabalho com o JS
+
+<b>Styled Components:</b> Utilizando objetos e funções dentro do CSS! Para obter uma props do styled component passamos uma função e podemos pegar todas as props. Por exemplo, dentro da `styled.h1 `\${(props) => console.log(props)}`\` 
+
+<b>Theme:</b> o designer colocou no figma diversas cores e formatos de texto que utilizaremos em todo o projeto.
+  - Para as cores, criamos uma pasta theme com o index.js contendo as cores primarias, secundárias e terciárias. Inclusive já cadastrando a cor de contraste do texto (branca) para as cores mais escuras
+  - Criamos o TypographyVariant para os titulos, subtitulos e paragrafos
+  - No GlobalStyle colocamos coisas bem gerais, como html e body (utilizaremos mais para fazer o reset no CSS na próxima aula)
 
 ## Aula 05
- - <b>Reset CSS:</b> todos navegadores vem com algumas formatações de css básicas. E eles são diferentes uns dos outros. A ideia do Reset é tirar essa formatação dos navegadores e criarmos as nossas
- - <b>lib normalize:</b> `yarn add styled-normalize` . Essa lib é antiga e muito útil para fazer com que os navegadores funcionem com o css equivalente.
- - criação do footer
+
+<b>Reset CSS:</b> todos navegadores vem com algumas formatações de css básicas. E eles são diferentes uns dos outros. A ideia do Reset é tirar essa formatação dos navegadores e criarmos as nossas
+
+<b>lib normalize:</b> `yarn add styled-normalize` . Essa lib é antiga e muito útil para fazer com que os navegadores funcionem com o css equivalente.
+
+<b>criação do footer</b>
 
 ## Aula 06
- - <b>Prop Types:</b> `yarn add prop-types` => criando tipos para as props a fim de evitar erros
- - <b>Component Text:</b> 
-  - Dentro do nosso layout terão vários textos. O componente Text vai servir para usarmos em todos os textos de nosso site. Para isso precisamos passar dois parametros. Um deles é a tag que vamos utilizar. Então, por exemplo, se formos utiilizar a tag 'a', 'span', ou 'div', é só passar ela como props. E o outro parâmetro seria o ajuste responsivo, caso precise mudar de cor ou formatação. Além disso passamos a prop <b>children</b> que se refere ao texto que vai dentro da tag.
+
+<b>Prop Types:</b> `yarn add prop-types` => criando tipos para as props a fim de evitar erros
+
+<b>Text Component:</b> Dentro do nosso layout terão vários textos. O componente Text vai servir para usarmos em todos os textos de nosso site. Para isso precisamos passar dois parametros. Um deles é a tag que vamos utilizar. Então, por exemplo, se formos utiilizar a tag 'a', 'span', ou 'div', é só passar ela como props. E o outro parâmetro seria o ajuste responsivo, caso precise mudar de cor ou formatação. Além disso passamos a prop <b>children</b> que se refere ao texto que vai dentro da tag.
 
 ## Aula 07 
- - <b>Responsividade:</b> breakpoints ficaram muito famosos com o bootstrap. Geralmente definido em 6 breakpoints, que vai desde extra-small (xs = menor que 576px) até extra-extra-large (xxl = maior que 1400px). Nesse site especifico vamos apenas dividir em desktop e mobile.
- - <p>Object,keys</p> => transforma as keys do objeto em um array. 
+
+<b>Responsividade:</b> breakpoints ficaram muito famosos com o bootstrap. Geralmente definido em 6 breakpoints, que vai desde extra-small (xs = menor que 576px) até extra-extra-large (xxl = maior que 1400px). Nesse site especifico vamos apenas dividir em desktop e mobile.
+
+<b>Object, keys</b> => transforma as keys do objeto em um array. 
 
 ## Aula 08
- - <b>Grid:</b> criação do conceito de Grids. Bem similar ao que o bootstrap utiliza.
+<b>Grid:</b> criação do conceito de Grids. Bem similar ao que o bootstrap utiliza.
 
 ## Aula 09
- - <b>Box Component:</b> criando um componente para centralizar o texto da home
- - <b>es-lint:</b> um corretor para deixar nosso código mais padronizado e limpo.
-  - <code>yarn add eslint --save-dev</code>
-  - <code>yarn eslint --init</code>
-  - baixar o eslint plugin no vscode
-## Extras
+<b>Box Component:</b> criando um componente para centralizar o texto da home
+<b>es-lint:</b> um corretor para deixar nosso código mais padronizado e limpo.
+- <code>yarn add eslint --save-dev</code>
+- <code>yarn eslint --init</code>
+- baixar o eslint plugin no vscode
+
+## Extras modulo 1
 
 <b>Notação de colchetes</b>
 
- - Tenho o seguinte objeto `const breakpoints = { xs: 0 , sm: 480, md: 768, lg: 992 }`
- - Em outro lugar do código eu tenho outro objeto `mediaQueries = { xs: 'color: blue', md: 'color: white' }`
- - A key do objeto breakpoints e do objeto mediaQueries tem equivalencias, ou seja, os dois tem as keys 'sm' e 'md'
- - Eu preciso criar um objeto novo com a quantidade de objetos que tem o mediaQueries (ou seja, só dois, o xs e o md) mas eu quero passar os valores que estão no objeto breakpoints (que é o '480' e o '768').
- - Para isso primeiro eu preciso pegar apenas as keys do mediaQueries. Para fazer isso eu faço: `object.keys(mediaQueries)`. O resultado vai ser `[xs, md]`
- - Depois eu crio um função obtendo essas keys conforme o tópico acima e criando um novo objeto com o map. E agora utilizaremos a notação de colchetes para isso!
+
+Tenho o seguinte objeto `const breakpoints = { xs: 0 , sm: 480, md: 768, lg: 992 }`
+
+Em outro lugar do código eu tenho outro objeto `mediaQueries = { xs: 'color: blue', md: 'color: white' }`
+
+A key do objeto breakpoints e do objeto mediaQueries tem equivalencias, ou seja, os dois tem as keys 'sm' e 'md'
+
+Eu preciso criar um objeto novo com a quantidade de objetos que tem o mediaQueries (ou seja, só dois, o xs e o md) mas eu quero passar os valores que estão no objeto breakpoints (que é o '480' e o '768').
+
+Para isso primeiro eu preciso pegar apenas as keys do mediaQueries. Para fazer isso eu faço: `object.keys(mediaQueries)`. O resultado vai ser `[xs, md]`
+
+Depois eu crio um função obtendo essas keys conforme o tópico acima e criando um novo objeto com o map. E agora utilizaremos a notação de colchetes para isso!
 ```javascript
   function breakpointMedia(cssByBreakpoints) { 
       const breakpointsNames = Object.keys(cssByBreakpoints);
@@ -60,7 +77,8 @@ Na visão do Mario Souto, sim! Como o react efetua diversas pré configurações
       )
   }
 ```
- - Então estamos percorrendo um array. No primeiro item do array, ao passar `${breakpoints[breakpointsName]}` estamos buscando o objeto breakpoints e passando como propriedade desse objeto breakpoint uma propriedade de outro objeto (que ao invocar essa função, invocaremos com breakpointMedia(mediaQueries)). Isso seria impossivel utilizando o breakpointMedia.mediaQueries . Pois a notação de pontos não consegue substituir uma propriedade por uma variável
+
+Então estamos percorrendo um array. No primeiro item do array, ao passar `${breakpoints[breakpointsName]}` estamos buscando o objeto breakpoints e passando como propriedade desse objeto breakpoint uma propriedade de outro objeto (que ao invocar essa função, invocaremos com breakpointMedia(mediaQueries)). Isso seria impossivel utilizando o breakpointMedia.mediaQueries . Pois a notação de pontos não consegue substituir uma propriedade por uma variável
 
 
 # Modulo 2
@@ -130,19 +148,27 @@ O state serve para qualquer e alterar o estado de alguma coisa. Pensemos num mod
   
 # Modulo 3
 
-## Aula 01
- - Criando as páginas de FAQ e Sobre
- - Rotas => utilizando o `Link` no Next => component `NextLink` da biblioteca link do Next
+## Aula 01 - Link / Rotas
 
-## Aula 02
- - API com NextJS: via .fetch e via GetStaticProps
-    - Podemos fazer via <b>Fecth</b>, no jeito padrão => Criamos uma variável via useState do React e depois utilizamos o UseEffect e passamos o retorno que estamos recebendo da API para essa variável do useState. 
-    - O <b>useEffect</b> abstrai a ideia do ciclo de vida do component. Antes do useEffect o React utilizava coisas especificas de cada ciclo de vida (que ainda é possível utilizar também, quando trabalhamos com classes), como 'didMount' 'didUpdate' e 'willUnmount', assim como no Angular utilizamos o OnInit, OnChange, AfterInit, onDestroy e etc.
-    - É por isso que quando consumimos uma API, via fetch, geralmente utilizamos o useState e o useEffect. o UseState serve para armazenar e alterar o estado de alguma variável. E o useEffect serve para que possamos fazer algo (no caso com essa variável) depois do DOM ter renderizado.
-    - Fecth + UseState + UseEffect é uma forma padrão de buscar API pelo React. Mas com o Next podemos utilizar o <b>GetStaticProps</b>. A diferença é que no fetch normal nós renderizamos a páginas e depois buscamos a informação e no GetStaticProps antes de renderizar a página o next se encarrega de já mostrar essa info de servidor. Isso é feito no build e não no load da página.
+Criando as páginas de FAQ e Sobre
+
+<b>Rotas</b> => utilizando o `Link` no Next => component `NextLink` da biblioteca link do Next
+
+## Aula 02 - GetStaticProps
+
+API com NextJS: via .fetch e via GetStaticProps
+
+Podemos fazer via <b>Fecth</b>, no jeito padrão => Criamos uma variável via useState do React e depois utilizamos o UseEffect e passamos o retorno que estamos recebendo da API para essa variável do useState. 
+
+O <b>useEffect</b> abstrai a ideia do ciclo de vida do component. Antes do useEffect o React utilizava coisas especificas de cada ciclo de vida (que ainda é possível utilizar também, quando trabalhamos com classes), como 'didMount' 'didUpdate' e 'willUnmount', assim como no Angular utilizamos o OnInit, OnChange, AfterInit, onDestroy e etc.
+
+É por isso que quando consumimos uma API, via fetch, geralmente utilizamos o useState e o useEffect. o UseState serve para armazenar e alterar o estado de alguma variável. E o useEffect serve para que possamos fazer algo (no caso com essa variável) depois do DOM ter renderizado.
+
+Fecth + UseState + UseEffect é uma forma padrão de buscar API pelo React. Mas com o Next podemos utilizar o <b>GetStaticProps</b>. A diferença é que no fetch normal nós renderizamos a páginas e depois buscamos a informação e no GetStaticProps antes de renderizar a página o next se encarrega de já mostrar essa info de servidor. Isso é feito no build e não no load da página.
 
 ```javascript
-// Modo REACT exemplo de fetch / consumo de API (com useState e useEffect)
+// Modo REACT - exemplo de fetch 
+// consumo de API (com useState e useEffect)
 export default function FAQPage(props) {
   const [faqCategories, setFaqCategories] = React.useState([]);
 
@@ -157,7 +183,8 @@ export default function FAQPage(props) {
   });
 }
 
-// Modo NEXT.JS - exemplo de fetch / consumo de API com getStaticProps
+// Modo NEXT.JS - exemplo de fetch
+// consumo de API com getStaticProps
 export async function getStaticProps() {
   const faqCategories = await fetch('https://instalura-api.vercel.app/api/content/faq').then(async (res) => {
     const response = await res.json();
@@ -166,17 +193,34 @@ export async function getStaticProps() {
 ```
 
 ## Aula 03 - SEO
-  - semantica do HTML é importante para
-  - Colocando as metatags dinamicas no HEAD e criando o Robots.
+semantica do HTML é importante para SEO
+
+Colocando as metatags dinamicas no HEAD e criando o Robots.
 
 ## Aula 04 - Context/Redux
-  - O redux é uma biblioteca que faz com que consigamos utilizar o gerenciamento de estado por toda a aplicação. É como se tivesse um escopo de variáveis que pudessemos acessar em qualquer componente.
-  - No projeto utilizamos o conceito de <b>High Order Function</b>. De forma meio grosseira, o Javascript chama de callback o High Order Function (HOF). Pelo que eu entendo callback é a função que está ali só aguardando ser chamada em outra função. E high order function é a função que chama o callback.
+
+O redux é uma biblioteca que faz com que consigamos utilizar 
+
+o gerenciamento de estado por toda a aplicação. É como se tivesse um escopo de variáveis que pudessemos acessar em qualquer componente.
+
+No projeto utilizamos o conceito de <b>High Order Function</b>. De forma meio grosseira, o Javascript chama de callback o High Order Function (HOF). Pelo que eu entendo callback é a função que está ali só aguardando ser chamada em outra função. E high order function é a função que chama o callback.
+
+## Aula 06 - Server side ou estático ?
+
+Duas coisas importantes quando pensamos em tornar o site mais estático ou mais dinamico é <b>perfomance</b> e <b>custo</b>. Imagina que a cada atualização do usuário precisamos fazer uma requisição no servidor. E agora imaginamos que nossa aplicação tem 10 mil usuários por dia atualizando e mexendo em várias coisas. ´Quando a aplicação ganha mais escala temos que tomar cuidado em não fazer requisições loucamente e em não gerar builds imensos.
+
+Em aplicações menores conseguimos utilizar alguns recursos interessantes do Next. Um deles é o do próprio `getStaticPaths()` que vimos anteriormente e que trabalha junto com o getStaticProps() para gerar páginas dinamicamente. Um dos atributos que podemos mudar é o `fallback: true`. fazendo isso o Next deixa de gerenciar os caminhos não encontrados (not found / 404) e nós temos que colocar essa regra. Outro parametro, mas dessa vez direto no `getStaticProps()` é o `revalidate: (Number)`, que podemos passar no number quantos milissegundos queremos que atualizar essa informação com o servidor. 
+
+## Aula 07 - Next Config
+
+<b>site.com.br/</b> Essa barra deve ser obrigatória ou não? Se não deixarmos obrigatória o analytics, por exemplo, vai entender que o site.com.br é um acesso e o site.com.br/ é outro acesso. E isso pra equipe de marketing acaba dificultando um pouco a análise. Por isso é interessante padronzar isso.
+
+Para fazer isso, criamos o arquivo next.config.js e passamos o parâmetro `trailingSlash: true`
 
 # Extras
 
-- como trabalhar com open source com
-  - entra no codigo do git e faz um fork
-  - git clone locamente
+como trabalhar com open source com
+ - entrar no código do git e fazer um fork no projeto
+ - efetuar o git clone locamente
   
-- git commit --amend (mudar a descrição do ultimo commit)
+`git commit --amend` (mudar a descrição do ultimo commit)
