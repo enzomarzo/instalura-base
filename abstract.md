@@ -199,17 +199,17 @@ Colocando as metatags dinamicas no HEAD e criando o Robots.
 
 ## Aula 04 - Context/Redux
 
-O redux é uma biblioteca que faz com que consigamos utilizar 
+O redux é uma biblioteca que faz com que consigamos utilizar o gerenciamento de estado por toda a aplicação. Ao invés de passar uma props pra 10 componentes diferentes e algumas vezes ainda de forma aninhada, podemos centralizar tudo isso em um lugar só.
 
-o gerenciamento de estado por toda a aplicação. É como se tivesse um escopo de variáveis que pudessemos acessar em qualquer componente.
+O context API é um modo moderno de utilizar o gerenciamento de estado, que é mais facil de ser utilizado que o redux.
 
 No projeto utilizamos o conceito de <b>High Order Function</b>. De forma meio grosseira, o Javascript chama de callback o High Order Function (HOF). Pelo que eu entendo callback é a função que está ali só aguardando ser chamada em outra função. E high order function é a função que chama o callback.
 
 ## Aula 06 - Server side ou estático ?
 
-Duas coisas importantes quando pensamos em tornar o site mais estático ou mais dinamico é <b>perfomance</b> e <b>custo</b>. Imagina que a cada atualização do usuário precisamos fazer uma requisição no servidor. E agora imaginamos que nossa aplicação tem 10 mil usuários por dia atualizando e mexendo em várias coisas. ´Quando a aplicação ganha mais escala temos que tomar cuidado em não fazer requisições loucamente e em não gerar builds imensos.
+Duas coisas importantes quando pensamos em tornar o site mais estático ou mais dinâmico é <b>perfomance</b> e <b>custo</b>. Imagina que a cada atualização do usuário precisamos fazer uma requisição no servidor. E agora imaginamos que nossa aplicação tem 10 mil usuários por dia atualizando e mexendo em várias coisas. Quando a aplicação ganha mais escala temos que tomar cuidado em não fazer requisições loucamente e em não gerar builds imensos.
 
-Em aplicações menores conseguimos utilizar alguns recursos interessantes do Next. Um deles é o do próprio `getStaticPaths()` que vimos anteriormente e que trabalha junto com o getStaticProps() para gerar páginas dinamicamente. Um dos atributos que podemos mudar é o `fallback: true`. fazendo isso o Next deixa de gerenciar os caminhos não encontrados (not found / 404) e nós temos que colocar essa regra. Outro parametro, mas dessa vez direto no `getStaticProps()` é o `revalidate: (Number)`, que podemos passar no number quantos milissegundos queremos que atualizar essa informação com o servidor. 
+Em aplicações maiores conseguimos utilizar alguns recursos interessantes do Next. Um deles é o do próprio `getStaticPaths()` que vimos anteriormente e que trabalha junto com o getStaticProps() para gerar páginas dinamicamente. Um dos atributos que podemos mudar é o `fallback: true`. fazendo isso o Next deixa de gerenciar os caminhos não encontrados (not found / 404) e nós temos que colocar essa regra. Outro parametro, mas dessa vez direto no `getStaticProps()` é o `revalidate: (Number)`, que podemos passar no number quantos milissegundos queremos que atualizar essa informação com o servidor. 
 
 ## Aula 07 - Next Config
 
@@ -217,10 +217,49 @@ Em aplicações menores conseguimos utilizar alguns recursos interessantes do Ne
 
 Para fazer isso, criamos o arquivo next.config.js e passamos o parâmetro `trailingSlash: true`
 
-# Extras
+## Extras
 
 como trabalhar com open source com
  - entrar no código do git e fazer um fork no projeto
  - efetuar o git clone locamente
   
 `git commit --amend` (mudar a descrição do ultimo commit)
+
+### Async / Await e Promises 
+
+Promise está relacionado com processamento assincrone. Interessante que na definição do Mozzila eles colocam que essa promessa pode estar disponível <b>´agora, no futuro ou nunca´</b>
+
+```Javascript
+//função que vai receber um ID
+function getUserByID(userID) { 
+  const userData = fetch('https://api.meusite.com.br/user/$userID)   // buscando nossa API
+    .then(response => response.json())
+    .then(data => data.name))   
+}
+```
+Then é um método da Promise. Quando efetuamos o `fetch` estamos fazendo uma requisição em alguma API. A resposta dessa requisição é uma `promise`. O método then recebe uma função callback (que geralmente criamos a função com `response => response.json()`) que retorna uma outra promise. No caso estamos transformando a promisse em arquivo JSON para depois recebe-lá como um objeto.
+
+O <b>async/await</b> chegou no JS no ES2017. A idéia foi simplificar as requisições assíncronas. A ideia foi abstrair as promisess para tornar a leitura do código mais fácil. A palavra-chave `await` recebe uma Promise e transforma essa Promise em um valor de retorno ou lança uma exceção se der erro.
+
+```javascript
+async function getUserByID(userID) { 
+  const response = await fetch('https://api.meusite.com.br/user/$userID);
+  const userData = await response.json()
+  return userData.name; // no return não utilizamos o await.
+}
+```
+
+### UseEffect
+
+Vamos supor que precisamos fazermos uma requisição de uma API via fetch e temos alguns botões que ao clicar atualiza essa chamada co outra requisição. Se fizermos isso pelo react com o useState, ao clicar no botão o react vai se perder. Isso porque ele vai renderizar a página novamente e vai refazer a classe, então ela vai chamar o primeiro fetch de novo e depois o segundo fetch que renderiza de novo pro primeiro fetch e assim gerando um loop infinito. 
+
+Para evitar isso, o react criou o hook do <b>useEffect<b>. Passaremos o fetch dentro desse useEffect. E passamos um outro parametro que é um array no qual dentro dele terá(ão) a(s) variável(is) que queremos avisar pro react para ficar de olho. Quando essa variável mudar, ai sim o react re-renderiza a página. Se passarmos um array vazio o react vai só renderizar uma única vez. 
+
+### Enviando e-mail com MailChimp
+
+A mistura de Next e Vercel torna o cadastro de newsletter bem fácil. Eu realizei um teste com a API da MailChimp. Fiz isso com ajuda <a target="_blank" href="https://leerob.io/blog/mailchimp-next-js">desse blog</a>. De forma simples foi possivel captar o email e enviar para o mailchimp.
+
+# Modulo 04 - Testes de
+
+## Aula 01 - Cypress
+
