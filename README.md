@@ -42,3 +42,4 @@ The easiest way to deploy a project:
 ### To start a project with Next JS
 
 It could be only `yarn create next-app` or, if we want the styled-components `yarn create next-app --example with-styled-components 'project name'`.
+

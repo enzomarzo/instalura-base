@@ -259,7 +259,50 @@ Para evitar isso, o react criou o hook do <b>useEffect<b>. Passaremos o fetch de
 
 A mistura de Next e Vercel torna o cadastro de newsletter bem fácil. Eu realizei um teste com a API da MailChimp. Fiz isso com ajuda <a target="_blank" href="https://leerob.io/blog/mailchimp-next-js">desse blog</a>. De forma simples foi possivel captar o email e enviar para o mailchimp.
 
-# Modulo 04 - Testes de
+
+### Spread Operator
+
+Ele serve para transformar um array ou objeto em itens soltos. Como uma string também é iterável, também é possível usar spread operator com strings. Uma grande utilidade do spread é para não só criar, copiar um novo array ou objeto. Se a gente simplesmente fizer `newArray = oldArray` e fizer um push no newArray, vai alterar também o oldArray, porque os dois apontam pro mesmo lugar. Mas utilizando o spread operator `new Array = [...oldArray]` estamos apontando para um lugar diferente. Isso faz muito sentido pensando em imutabilidade.
+
+```javascript
+let array = [10 , 30 , 50 , 100, 20, 9, 25]
+
+console.log(Math.max(array))    // NaN (considera o array como um unico item)
+console.log(Math.max(...array)) // 100 (considera cada item)
+```
+
+```javascript
+let array1 = ['Enzo', 'Cioffi']
+let array2 = ['meu', 'nome']
+
+console.log(...array1, 'de Marzo', 'é o', ...array2);
+//Enzo Cioffi de Marzo é o meu nome
+//sem o spread, ficariam vários arrays.
+```
+
+# Modulo 04 - Testes
 
 ## Aula 01 - Cypress
 
+Cypress é uma biblioteca de testes. 
+
+Get starting:
+
+1 Baixar =>`yarn add cypress eslint-plugin-cypress --dev`
+2 Incluindo o cypress no eslintrc.js
+```javascript
+  env: {
+    browser: true,
+    es2021: true,
+    'cypress/globals': true,
+  },
+  extends: [
+    'plugin:cypress/recommended',
+```
+3 Colocar o caminho do site no cypress.json
+{
+  "baseUrl": "http://localhost:3000",
+  "video": false
+}
+
+Para entender melhor sobre o 
