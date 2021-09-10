@@ -305,4 +305,6 @@ Get starting:
   "video": false
 }
 
-Para entender melhor sobre o 
+E ai começamos a programar os testes. 
+
+##
