@@ -2,18 +2,19 @@
 
 ### Some of the features:
  - <b>best practices</b> for code architecture
- - Creation of foundation components such as box, grid and text
- - Modal and form creation
+ - Creation of <b>foundation components</b> such as box, grid and text
+ - <b>Modal</b> and <b>form</b> creation with and without external libs
  - Using <b>libs resources</b> like lodash, normalize and framer-motion
  - Creation of <b>Theme Colors and Typographys</b> used throughout the application
  - Typing props with <b>prop-types</b> lib
  - applying our own <b>responsive design</b> without using external libs like bootstrap
  - including <b>eslint</b> to standardize the code
  - using <b>Context API</b>
- - using <b>useState</b> and <b>UseEffect</b>
+ - making use of <b>useState</b> and <b>UseEffect</b>
  - applying <b>CI and CD</b> with github Action and Vercel
  - creating pages and <b>dynamic routes</b> with next.js
  - making use of <b>SEO</b> good practices
+ - Testing the code with <b>Cypress</b>
  
 ### Why Next JS ? 
 

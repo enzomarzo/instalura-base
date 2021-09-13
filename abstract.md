@@ -307,4 +307,16 @@ Get starting:
 
 E ai começamos a programar os testes. 
 
-##
+## Aula 02
+
+Uma forma bem facil de criar formulários com React é utilizando libs como formik ou a React Hook Form. Nessa aula, uma das coisas que o Mario faz é ensinar como o Formik cria o formulário
+
+Crud é uma responsabilidade do back-end. Isso porque é papel do back fazer requisições para o banco de dados. Mas na hora de consumirmos uma API, geralmente fazemos via requisição HTTP e utilizamos algum dos principais métodos http (geralmente get e post e algumas vezes delete). O <b>Postman</b> é um site que ajuda muito a fazer esses testes de requisição (pra não ter que testar via fetch) 
+
+<b>JWT: </b> uma padronização segura e fácil que gera uma chave com a sessão do usuário. 
+
+### o que preciso reforçar
+
+- useRef
+- useContext (Context API) e Redux
+
