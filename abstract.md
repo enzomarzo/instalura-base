@@ -307,4 +307,26 @@ Get starting:
 
 E ai começamos a programar os testes. 
 
-##
+## Aula 02
+
+Uma forma bem facil de criar formulários com React é utilizando libs como formik ou a React Hook Form. Nessa aula, uma das coisas que o Mario faz é ensinar como o Formik cria o formulário
+
+Crud é uma responsabilidade do back-end. Isso porque é papel do back fazer requisições para o banco de dados. Mas na hora de consumirmos uma API, geralmente fazemos via requisição HTTP e utilizamos algum dos principais métodos http (geralmente get e post e algumas vezes delete). O <b>Postman</b> é um site que ajuda muito a fazer esses testes de requisição (pra não ter que testar via fetch) 
+
+<b>JWT: </b> uma padronização segura e fácil que gera uma chave com a sessão do usuário.
+
+<b>Como manter o usuário ativo:</b> No JS isso pode ser feito com o localStorage, mas no Next, como trabalhamos no servidor, faz mais sentido usarmos a lib nookie, que vai lidar com os cookies pra gente. 
+
+<code>yarn add nokkies</code>. No momento que o usuário faz o login, nós enviamos uma requisição POST para o servidor, para assim poder enviarmos o login e a senha. Ao fazer um fetch POST teremos um retorno de uma PROMISE. E ai pegamos esse retorno e trabalhamos em cima dele. Primeiro criamos uma variavel para salvar esse retorno, que será o token. 
+
+### Extras
+
+Algumas frases interessantes para lembrar
+ - <b>Testes: </b> teste o que faça sentido, 
+
+
+#### o que preciso reforçar
+
+- useRef
+- useContext (Context API) e Redux
+
