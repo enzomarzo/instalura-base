@@ -319,6 +319,20 @@ Crud é uma responsabilidade do back-end. Isso porque é papel do back fazer req
 
 <code>yarn add nokkies</code>. No momento que o usuário faz o login, nós enviamos uma requisição POST para o servidor, para assim poder enviarmos o login e a senha. Ao fazer um fetch POST teremos um retorno de uma PROMISE. E ai pegamos esse retorno e trabalhamos em cima dele. Primeiro criamos uma variavel para salvar esse retorno, que será o token. 
 
+## Aula 03
+
+<code>cypress run --headless</code> : fazendo os testes pelo terminal, sem precisar abrir o navegador
+
+Criamos uma pasta <b>env</b> e o arquivo isStagingEnv para sabermos se estamos trabalhando em produção ou em localhost. Ou seja, se não existir ´window´ estamos no servidor. 
+
+```javascript
+const isServer = typeof window === 'undefined';
+
+const isStagingEnv = isServer
+  ? process.env.NODE_ENV === 'development'
+  : globalThis.location.href.includes('localhost');
+```
+
 ### Extras
 
 Algumas frases interessantes para lembrar
