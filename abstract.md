@@ -284,7 +284,7 @@ console.log(...array1, 'de Marzo', 'é o', ...array2);
 
 ## Aula 01 - Cypress
 
-Cypress é uma biblioteca de testes. 
+Cypress é uma biblioteca de testes. Vamos utilizá-la para fazer os testes de integração, ou seja, o teste de requisições, que efetua a conversa entre o front e o back. 
 
 Get starting:
 
@@ -331,6 +331,32 @@ const isServer = typeof window === 'undefined';
 const isStagingEnv = isServer
   ? process.env.NODE_ENV === 'development'
   : globalThis.location.href.includes('localhost');
+```
+
+## Aula 04 - jest
+
+<code>yarn add jest @types/jest eslint-plugin-jest</code> -> Para rodar só colocar no terminal yarn jest ou yarn jest --watch (para acompanhar as alterações). E criamos um arquivo de jest.config.js para colocar algumas informações extra que quisermos.
+
+Depois criamos os arquivos de test por component para testar, por exemplo, funções. Nessa aula testamos o propToStyle para saber se ele está recebendo uma string e um objeto. E deixamos isso sempre de forma bastante descrita.
+
+Por exemplo, a primeira parte do código ficaria assim: 
+
+```javascript
+describe('propToStyle()', () => {
+  describe('when receives an simple argument', () => {
+    test('and it is a string', () => {
+      const propToStyleResult = propToStyle('textAlign');
+      const componentProps = { textAlign: 'center' };
+      const styleResult = propToStyleResult(componentProps);
+      expect(styleResult).toEqual({ textAlign: 'center' });
+    });
+    test('and it is a number', () => {
+      const propToStyleResult = propToStyle('flex');
+      const componentProps = { flex: 1 };
+      const styleResult = propToStyleResult(componentProps);
+      expect(styleResult).toEqual({ flex: 1 });
+    });
+  });
 ```
 
 ### Extras
