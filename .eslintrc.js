@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     'cypress/globals': true,
+    'jest/globals': true,
   },
   extends: [
     'plugin:cypress/recommended',
@@ -24,4 +25,18 @@ module.exports = {
     'linebreak-style': 0,
     'react/jsx-props-no-spreading': 'off',
   },
+  overrides: [
+    {
+      files: [
+        '**/*.test.js',
+      ],
+      plugins: ['jest'],
+      env: {
+        jest: true,
+      },
+      // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+      ...require('eslint-plugin-jest').configs.recommended,
+    },
+  ],
+
 };
