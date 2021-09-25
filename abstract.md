@@ -361,7 +361,14 @@ describe('propToStyle()', () => {
 
 ## Aula 05
 
+Incluindo o <b>react-test-library</b>. Até a aula anterior, os testes eram feitos com js puro e pondendo testar coisas diferentes independente do framework que utilizarmos. O react-test-library serve para testar coisas especificas do react, como por exemplo a renderização de componentes. 
 
+Fizemos o teste com o componente TextField
+
+
+## Aula 06
+
+Aprimoramos o formulário de login, seguindo o mesmo conceito de aulas anteriores que é basicamente reproduzir o que uma lib como o formik faz. Instalamos o <code>yup</code> que é uma lib que facilita a inclusão de validação do form
 
 ### Extras
 
