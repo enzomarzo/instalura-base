@@ -7,6 +7,8 @@
     "lint": "eslint --ignore-path .gitignore .",
     "custom-script": "node ./script-test.js",
     "commit": "cz",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:integration:open": "cypress open",
     "test:integration": "cypress run --headless"
   },
@@ -14,9 +16,17 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@crello/react-lottie": "^0.0.11",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.1",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint-plugin-jest": "^24.4.2",
     "framer-motion": "^4.1.17",
     "husky": "^7.0.1",
+    "jest": "^27.2.0",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-styled-components": "^7.0.5",
     "lodash": "^4.17.21",
     "next": "latest",
     "nookies": "^2.5.2",
@@ -24,7 +34,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.2.3",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",

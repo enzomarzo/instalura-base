@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import breakpointsMedia from './breakpointsMedia';
+import breakpointsMedia from '../breakpointsMedia';
 
 /* Essa função serve para definirmos via 'props' atributos do CSS especificos que queremos alterar
 a condicional verifica se a propValue é um objeto, pois estamos passando os breakpoints
